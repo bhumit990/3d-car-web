@@ -1,0 +1,70 @@
+// Car data — real specifications, no invented metrics
+
+export const CARS = [
+  {
+    id: 'challenger',
+    name: 'Dodge',
+    model: 'Challenger SRT Hellcat',
+    tagline: 'American muscle, undiluted.',
+    glb: '/dodge_challenger.glb',
+    accentOffset: 0,
+    specs: {
+      engine: '6.2L Supercharged HEMI V8',
+      horsepower: '717 hp',
+      torque: '656 lb-ft',
+      topSpeed: '199 mph',
+      acceleration: '3.6 sec 0–60 mph',
+      transmission: '8-Speed TorqueFlite Auto',
+      drivetrain: 'Rear-Wheel Drive',
+      weight: '4,439 lbs',
+    },
+    description:
+      'The Challenger SRT Hellcat is the definitive American muscle car — a 717-horsepower statement that refuses to compromise. With its supercharged 6.2L HEMI V8 and iconic retro proportions, it delivers raw, unfiltered performance.',
+    cameraPosition: [0, 0.5, 4.5],
+    scale: 1.0,
+  },
+  {
+    id: 'porsche',
+    name: 'Porsche',
+    model: '911 GT3',
+    tagline: 'Engineered without compromise.',
+    glb: '/porsche_911_gt3.glb',
+    accentOffset: 1,
+    specs: {
+      engine: '4.0L Naturally Aspirated Flat-6',
+      horsepower: '503 hp',
+      torque: '347 lb-ft',
+      topSpeed: '198 mph',
+      acceleration: '3.2 sec 0–60 mph',
+      transmission: '7-Speed PDK / 6-Speed Manual',
+      drivetrain: 'Rear-Wheel Drive',
+      weight: '3,126 lbs',
+    },
+    description:
+      'The 911 GT3 is a road-legal race car that traces every performance decision back to the Nürburgring. Its naturally aspirated 4.0L flat-six revs to 9,000 rpm, producing a sound and sensation found nowhere else.',
+    cameraPosition: [0, 0.4, 4.2],
+    scale: 1.0,
+  },
+  {
+    id: 'supra',
+    name: 'Toyota',
+    model: 'Supra MK4',
+    tagline: 'The legend never ends.',
+    glb: '/toyota_supra_mk4__supra_1997.glb',
+    accentOffset: 2,
+    specs: {
+      engine: '3.0L Twin-Turbo 2JZ-GTE Inline-6',
+      horsepower: '320 hp (stock)',
+      torque: '315 lb-ft',
+      topSpeed: '155 mph (limited)',
+      acceleration: '4.6 sec 0–60 mph',
+      transmission: '6-Speed Getrag Manual',
+      drivetrain: 'Rear-Wheel Drive',
+      weight: '3,494 lbs',
+    },
+    description:
+      'The MK4 Supra is a cultural icon and engineering masterpiece. Its legendary 2JZ-GTE twin-turbo inline-six is virtually unbreakable and famously tunable, making it one of the most celebrated performance platforms ever built.',
+    cameraPosition: [0, 0.45, 4.4],
+    scale: 1.0,
+  },
+]

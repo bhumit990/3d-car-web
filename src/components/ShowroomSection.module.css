@@ -1,0 +1,137 @@
+/* ShowroomSection styles */
+
+.section {
+  background: var(--color-bg-surface);
+  padding: var(--space-3xl) 80px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Large display typography */
+.displayRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 0.9;
+}
+
+.displayText {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 12vw, 160px);
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary);
+  user-select: none;
+}
+
+.displayTextOutline {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 12vw, 160px);
+  letter-spacing: 0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240, 237, 232, 0.18);
+  user-select: none;
+  align-self: flex-end;
+}
+
+/* Highlight grid */
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+}
+
+.highlight {
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlightNumber {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.highlightLabel {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.highlightBody {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  max-width: 34ch;
+}
+
+/* Pull quote */
+.pullQuote {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-lg);
+  margin: 0;
+  align-self: flex-start;
+}
+
+.pullQuoteText {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 36px);
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary);
+  font-style: normal;
+  line-height: 1.2;
+}
+
+.pullQuoteCite {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  font-style: normal;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--space-2xl) 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-xl) 20px;
+    gap: var(--space-2xl);
+  }
+
+  .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .displayText,
+  .displayTextOutline {
+    font-size: clamp(48px, 14vw, 80px);
+  }
+
+  .displayTextOutline {
+    align-self: flex-start;
+  }
+}

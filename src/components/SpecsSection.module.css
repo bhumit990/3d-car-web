@@ -1,0 +1,230 @@
+/* SpecsSection styles */
+
+.section {
+  min-height: 100dvh;
+  background: var(--color-bg-mid);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) 80px;
+  position: relative;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: var(--space-2xl);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.dividerLabel {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+}
+
+/* Content */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+/* Header */
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brand {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.modelName {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  max-width: 52ch;
+  align-self: center;
+}
+
+/* Stats grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.statTile {
+  background: var(--color-bg-surface);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  transition: background-color 200ms ease;
+}
+
+.statTile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: var(--color-accent);
+  transition: height 400ms var(--ease-out-expo);
+}
+
+.statTile:hover::before {
+  height: 100%;
+}
+
+.statTile:hover {
+  background: rgba(232, 82, 26, 0.04);
+}
+
+.statValue {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.4vw, 17px);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+/* Car tabs — just a display row showing which car is active */
+.carTabs {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.carTab {
+  flex: 1;
+  padding: var(--space-lg) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px solid var(--color-border);
+  opacity: 0.35;
+  transition: opacity 300ms ease;
+}
+
+.carTab:last-child {
+  border-right: none;
+}
+
+.carTabActive {
+  opacity: 1;
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: -1px;
+}
+
+.carTabBrand {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.carTabModel {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--space-2xl) 40px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: var(--space-xl) 20px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statTile {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .carTabs {
+    flex-direction: column;
+  }
+
+  .carTab {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+}

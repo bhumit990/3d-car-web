@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+dist-ssr/
+
+# Local / IDE files
+.aider-desk/
+.env.local
+.env.*.local
+*.local
+.DS_Store
+Thumbs.db
+
+# Root duplicate 3D models (active models are inside /public)
+/*.glb

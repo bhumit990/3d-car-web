@@ -1,0 +1,122 @@
+/* ============================================================
+   APEX MOTORS — Global Design System
+   Theme: Dark Luxury Automotive
+   Palette: Near-black + Chrome Silver + Ember accent
+   Typography: Bebas Neue (display) + Outfit (body)
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Core palette */
+  --color-bg:        #0a0a0c;
+  --color-bg-mid:    #0f0f12;
+  --color-bg-surface: #141418;
+  --color-border:    rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Text */
+  --color-text-primary:   #f0ede8;
+  --color-text-secondary: rgba(240, 237, 232, 0.55);
+  --color-text-tertiary:  rgba(240, 237, 232, 0.30);
+
+  /* Accent — Ember (warm orange-red) */
+  --color-accent:         #e8521a;
+  --color-accent-light:   #f07040;
+  --color-accent-dim:     rgba(232, 82, 26, 0.15);
+  --color-accent-glow:    rgba(232, 82, 26, 0.25);
+
+  /* Chrome / silver */
+  --color-chrome:         #c8ccd6;
+  --color-chrome-dim:     rgba(200, 204, 214, 0.4);
+
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Outfit', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   40px;
+  --space-2xl:  64px;
+  --space-3xl:  96px;
+  --space-4xl:  128px;
+
+  /* Corner radius — all-sharp with minimal exceptions */
+  --radius-sm:  2px;
+  --radius-md:  4px;
+  --radius-lg:  8px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-expo:  cubic-bezier(0.7, 0, 0.84, 0);
+  --duration-fast:   200ms;
+  --duration-mid:    400ms;
+  --duration-slow:   700ms;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent-dim);
+  color: var(--color-text-primary);
+}
+
+/* Utility: visually hidden (a11y) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
